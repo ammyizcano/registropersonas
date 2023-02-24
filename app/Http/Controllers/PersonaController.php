@@ -13,6 +13,7 @@ class PersonaController extends Controller
 {
 
     public function exportExcel() {
+        dd(Excel::download(new PersonasExport, 'lista-personas.xlsx'));
         return Excel::download(new PersonasExport, 'lista-personas.xlsx');
     }
     /**
@@ -50,9 +51,15 @@ class PersonaController extends Controller
             $persona->identidad = $request->get('identidad');
             $persona->celular = $request->get('celular');
             $persona->departamento = $request->input('departamento');
-            $persona->imagen = $request->get('imagen'   );
+            if ($request->hasfile('imagen')) {
+                $file = $request->file('imagen');
+                $path = 'app/public/images/';
+                $filename = $file->getClientOriginalName();
+                $upload = $request->file('imagen')->move($path, $filename);
+                $persona->imagen = $path . $filename;
+            }
             $persona->save();
-            Mail::to('ammyizca@gmail.com')->send(new Notification($persona));
+            Mail::to('laury.vaquedano@ideaworks.la')->send(new Notification($persona));
 
             return redirect('personas/create')->with('store','done');
         } catch (\Throwable $th) {
