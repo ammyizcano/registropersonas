@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('persona.create');
 });
 
-Route::resource('personas', 'App\Http\Controllers\PersonaController');
+Route::resource('/personas', 'App\Http\Controllers\PersonaController');
 Route::get('personas-lista-excel', 'PersonaController@exportExcel')->name('personas.excel');
