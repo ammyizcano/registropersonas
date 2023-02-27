@@ -7,6 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2489/PNG/96/vaccination_icon_150143.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" integrity="sha512-hwwdtOTYkQwW2sedIsbuP1h0mWeJe/hFOfsvNKpRB3CkRxq8EW7QMheec1Sgd8prYxGm1OM9OZcGW7/GUud5Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Nuevo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' type='text/javascript'></script>
+
+    <!-- FinNuevo -->
     <title>Registro de Vacunación</title>
 </head>
 <body>
@@ -16,28 +24,33 @@
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                 <img src="https://cdn.icon-icons.com/icons2/2489/PNG/96/vaccination_icon_150143.png" alt="logo" width="60px" height="60px">
             </a>
-            <!-- Boton   -->
-            <div class="col-md-3 text-end">
-                <a href="{{ route('personas.excel') }}"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Exportar Excel</button></a>
-            </div>
+
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <button type="button" class="btn btn-success text-end" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Exportar Excel</button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-dialog-" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-left" id="exampleModalLabel">Exportar Excel</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="userPassword" class="form-control" id="userPassword" placeholder="Ingrese la contraseña">
+                        <small style="color: red; display: none;" id="errorMessage">Contraseña incorrecta, intenta de nuevo</small>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reset()" id="btnCancelar">Cancelar</button>
+                    <a href="{{ route('personas.excel') }}" id="link" onclick="validar()"><button class="btn btn-success">Exportar</button></a>
+                </div>
+                </div>
+            </div>
+            </div>
         </header>
     </div>
         <!-- Formulario -->
@@ -107,4 +120,28 @@
         });
     </script>
 @endif
+
+<script type="text/javascript">
+    function validar() {
+        let password = "jjasAHosY869127k@lais8028JASU"
+        let userPassword = document.getElementById('userPassword').value;
+        let errorMessage = document.getElementById('errorMessage');
+        let btnCancelar = document.getElementById('btnCancelar');
+        if (password == userPassword) {
+            $('#link').attr('href', '{{route("personas.excel")}}');
+            errorMessage.style.display = "inline";
+            errorMessage.style.color = 'green';
+            errorMessage.innerHTML = 'Se exportó el archivo correctamente';
+            btnCancelar.textContent = 'Cerrar';
+        } else {
+            $('#link').attr('href', 'javascript:void(0)');
+            errorMessage.style.display = "inline";
+        }
+    }
+
+    function reset() {
+        document.getElementById('userPassword').value = '';
+        document.getElementById('errorMessage').style.display = 'none';
+    }
+</script>
 </html>    
