@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/personas', 'App\Http\Controllers\PersonaController');
-Route::get('personas-lista-excel', 'PersonaController@exportExcel')->name('personas.excel');
+Route::get('personas-lista-excel', [PersonaController::class, 'exportExcel'])->name('personas.excel');

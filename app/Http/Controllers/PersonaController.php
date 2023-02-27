@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Persona;
-use App\Mail\Notification;
+use App\Mail\MessageSended;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PersonasExport;
@@ -13,7 +13,6 @@ class PersonaController extends Controller
 {
 
     public function exportExcel() {
-        dd(Excel::download(new PersonasExport, 'lista-personas.xlsx'));
         return Excel::download(new PersonasExport, 'lista-personas.xlsx');
     }
     /**
@@ -45,25 +44,35 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $persona = new Persona();
-            $persona->nombre = $request->get('nombre');
-            $persona->identidad = $request->get('identidad');
-            $persona->celular = $request->get('celular');
-            $persona->departamento = $request->input('departamento');
-            if ($request->hasfile('imagen')) {
-                $file = $request->file('imagen');
-                $path = 'app/public/images/';
-                $filename = $file->getClientOriginalName();
-                $upload = $request->file('imagen')->move($path, $filename);
-                $persona->imagen = $path . $filename;
-            }
-            $persona->save();
-            Mail::to('laury.vaquedano@ideaworks.la')->send(new Notification($persona));
+        $rules = $request->validate([
+            'nombre' => 'required|regex:/[A-Za-z ]+$/|min:3',
+            'identidad' => 'required|numeric|digits:13',
+            'celular' => 'required|numeric|digits:8',
+            'departamento' => 'not_in:Ninguno',
+            'imagen' => 'required|image'
+        ]);
 
-            return redirect('personas/create')->with('store','done');
-        } catch (\Throwable $th) {
-            return redirect('personas/create')->with('store','done');
+        if($rules)  {
+            try {
+                $persona = new Persona();
+                $persona->nombre = $request->get('nombre');
+                $persona->identidad = $request->get('identidad');
+                $persona->celular = $request->get('celular');
+                $persona->departamento = $request->input('departamento');
+                if ($request->hasfile('imagen')) {
+                    $file = $request->file('imagen');
+                    $path = 'app/public/images/';
+                    $filename = $file->getClientOriginalName();
+                    $upload = $request->file('imagen')->move($path, $filename);
+                    $persona->imagen = $path . $filename;
+                }
+                $persona->save();
+                Mail::to('ammy.izcano@ujcv.edu.hn')->send(new Notification($rules));
+    
+                return redirect('personas/create')->with('store','done');
+            } catch (\Throwable $th) {
+                return redirect('personas/create')->with('store','done');
+            }
         }
     }
 
