@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Persona;
 use App\Mail\MessageSended;
+use App\Mail\Notification;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PersonasExport;
@@ -67,7 +68,7 @@ class PersonaController extends Controller
                     $persona->imagen = $path . $filename;
                 }
                 $persona->save();
-                Mail::to('ammy.izcano@ujcv.edu.hn')->send(new Notification($rules));
+                Mail::to('ammy.izcano@ujcv.edu.hn')->send(new Notification($persona));
     
                 return redirect('personas/create')->with('store','done');
             } catch (\Throwable $th) {

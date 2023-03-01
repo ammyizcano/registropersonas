@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2489/PNG/96/vaccination_icon_150143.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" integrity="sha512-hwwdtOTYkQwW2sedIsbuP1h0mWeJe/hFOfsvNKpRB3CkRxq8EW7QMheec1Sgd8prYxGm1OM9OZcGW7/GUud5Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+   
 
     <!-- Nuevo -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
@@ -20,6 +22,7 @@
 <body>
         <!-- Encabezado  -->
     <div class="container">
+        
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                 <img src="https://cdn.icon-icons.com/icons2/2489/PNG/96/vaccination_icon_150143.png" alt="logo" width="60px" height="60px">
@@ -60,6 +63,7 @@
             <form action="/personas" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
+                
                     <label for="nombre" class="form-label text-secondary" for="validationDefault01">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" tabindex="1" autocomplete=off value="{{ old('nombre') }}">
                     <small style="color:red;">{{ $errors->first('nombre') }}</small>

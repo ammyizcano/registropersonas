@@ -25,12 +25,13 @@ class Notification extends Mailable
     /**
      * Get the message envelope.
      */
-    public function envelope(): Envelope
+   /* public function envelope(): Envelope
     {
         return new Envelope(
             subject: 'Notification',
         );
-    }
+    }  */
+
 
     /**
      * Get the message content definition.
@@ -60,6 +61,6 @@ class Notification extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->persona->nombre.'Te has registrado desde ammy.domtemporal.com')->view('email');
+        return $this->subject($this->persona->nombre.'Te has registrado desde ammy.domtemporal.com')->view('persona.email');
     }
 }
