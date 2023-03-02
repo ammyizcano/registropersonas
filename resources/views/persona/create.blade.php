@@ -109,12 +109,20 @@
                     <small style="color:red;">{{ $errors->first('imagen') }}</small>
                 </div>
                 <a href="create" tabindex="5" class="btn btn-secondary">Cancelar</a>
-                <button tabindex="6" class="btn btn-primary">Guardar</button>
+                
+                <input type="submit" id="button" value="Send Email" class="btn btn-primary" >
             </form>
+            <script type="text/javascript"
+             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+            <script type="text/javascript">
+             emailjs.init('gEL_ScG8zgIWoDT7z')
+            </script>
             </div>
         </div>
     </div>
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js" integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 @if(session('store') == "done")
@@ -148,4 +156,27 @@
         document.getElementById('errorMessage').style.display = 'none';
     }
 </script>
+<script>
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_ant5ju7';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Guardar';
+      alert('Mensaje enviado correctamente!');
+    }, (err) => {
+      btn.value = 'Guardar';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+
 </html>    
