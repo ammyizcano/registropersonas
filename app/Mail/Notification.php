@@ -25,23 +25,27 @@ class Notification extends Mailable
     /**
      * Get the message envelope.
      */
-   /* public function envelope(): Envelope
+    public function envelope(): Envelope
     {
         return new Envelope(
+            from: new Address('ammy.izcano@ujcv.edu.hn', 'Ammy Izcano'),
+             replyTo: [
+             new Address('ammy.izcano@ujcv.edu.hn', 'Ammy Izcano'),
+             ],
             subject: 'Notification',
         );
-    }  */
-
+    }  
 
     /**
      * Get the message content definition.
      */
-  /*  public function content(): Content
+    public function content(): Content
     {
         return new Content(
-            view: 'email',
+            view: 'emails.notification',
+            text: 'emails.notification-text'
         );
-    } */
+    }
 
     /**
      * Get the attachments for the message.
@@ -54,13 +58,13 @@ class Notification extends Mailable
     }
 
 
-    /**
-     * Build the message.
+   
+  /*   * Build the message.
      *
      * @return $this
-     */
+    
     public function build()
     {
-        return $this->subject($this->persona->nombre.'Te has registrado desde ammy.domtemporal.com')->view('persona.email');
-    }
+        return $this->subject($this->persona->nombre.'Datos de vacunación desde ammy.domtemporal.com')->view('persona.email');
+    } */
 }
