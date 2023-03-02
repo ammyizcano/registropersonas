@@ -72,6 +72,7 @@ class PersonaController extends Controller
     
                 return redirect('personas/create')->with('store','done');
             } catch (\Throwable $th) {
+                dd($th);
                 return redirect('personas/create')->with('store','done');
             }
         }

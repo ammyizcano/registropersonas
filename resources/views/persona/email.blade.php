@@ -323,7 +323,7 @@
     <table style="border:1px solid #333;">
         <tr>
             <td><b>Nombre</b></td>
-            <td>{{$contactame->nombre}}</td>
+            <td>{{$persona->nombre}}</td>
         </tr>
        <tr>
             <td><b>Identidad</b></td>

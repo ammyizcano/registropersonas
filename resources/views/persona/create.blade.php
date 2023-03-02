@@ -109,15 +109,10 @@
                     <small style="color:red;">{{ $errors->first('imagen') }}</small>
                 </div>
                 <a href="create" tabindex="5" class="btn btn-secondary">Cancelar</a>
-                
-                <input type="submit" id="button" value="Send Email" class="btn btn-primary" >
+                <button tabindex="6" class="btn btn-primary" value="Guardar" id="button"  type="submit">Guardar</button> 
+               
             </form>
-            <script type="text/javascript"
-             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-            <script type="text/javascript">
-             emailjs.init('gEL_ScG8zgIWoDT7z')
-            </script>
+           
             </div>
         </div>
     </div>
@@ -156,27 +151,6 @@
         document.getElementById('errorMessage').style.display = 'none';
     }
 </script>
-<script>
-    const btn = document.getElementById('button');
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Enviando...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_ant5ju7';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Guardar';
-      alert('Mensaje enviado correctamente!');
-    }, (err) => {
-      btn.value = 'Guardar';
-      alert(JSON.stringify(err));
-    });
-});
-</script>
 
 </html>    

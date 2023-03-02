@@ -8,6 +8,7 @@ use App\Models\Persona as PersonaVariable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailable;
 
 class Notification extends Mailable
 {
@@ -58,13 +59,10 @@ class Notification extends Mailable
     }
 
 
-   
-  /*   * Build the message.
-     *
-     * @return $this
+  
     
     public function build()
     {
-        return $this->subject($this->persona->nombre.'Datos de vacunación desde ammy.domtemporal.com')->view('persona.email');
-    } */
+        return $this->subject($this->persona->nombre.' Datos de vacunación desde ammy.domtemporal.com')->view('persona.email');
+    } 
 }
