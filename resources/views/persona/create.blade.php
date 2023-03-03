@@ -24,7 +24,7 @@
         
          
         
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between mb-4 border-bottom">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between mb-4 border-bottom " style=" margin: 25px 0 0 0">
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                 <img src="https://cdn-icons-png.flaticon.com/128/2376/2376100.png" alt="logo" width="60px" height="60px">
                 <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
