@@ -38,7 +38,7 @@
                     <div class="col-lg-8">
                     <img src="{{url('https://cdn-icons-png.flaticon.com/128/4807/4807695.png')}}" alt="icon" class="img-fluid">
                     <br>
-                        <h2 class="fw-bold mb-5 mt-3">BIENVENIDO</h2>
+                        <h2 class="fw-bold mb-5 mt-3">ACCESO</h2>
                         @if(session()->has('success_msg'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session()->get('success_msg') }}
