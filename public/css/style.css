@@ -1,0 +1,79 @@
+body{
+    background: #11998e; 
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e); 
+    background: linear-gradient(to right, #38ef7d, #11998e); 
+}
+
+.card-body{
+    width: 100%;
+    background-color: rgba(252, 252, 252, 0.183);
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+}
+.form-control {
+
+  
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid 2px rgba(255,255,255,.5);
+  
+
+}
+
+
+
+.img-fluid{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+    margin:     0 0 40px 0;
+}
+
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+    
+}
+
+.fw-bold {
+
+font-size: 40px;
+margin: 0 0 15px 0;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    
+}
+
+.btn-success {
+    background-color: #202a29a6;
+}
+
+    .fas {
+        color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.table{
+   background-color: #53fcbb11;
+}
+@media screen and (max-width: 900px){
+	
+	.wave{
+		display: none;
+	}
+
+	
+}

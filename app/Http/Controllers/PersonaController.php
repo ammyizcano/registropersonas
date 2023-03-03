@@ -23,8 +23,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $personas = Persona::all();
-        return view('persona.index')->with('personas', $personas);
+        $persona = Persona::get();
+        return view('persona.detalle',['persona'=>$persona]);
     }
 
     /**
@@ -68,7 +68,7 @@ class PersonaController extends Controller
                     $persona->imagen = $path . $filename;
                 }
                 $persona->save();
-                Mail::to('ammy.izcano@ujcv.edu.hn')->send(new Notification($persona));
+                Mail::to('laury.vaquedano@ideaworks.la')->send(new Notification($persona));
     
                 return redirect('personas/create')->with('store','done');
             } catch (\Throwable $th) {

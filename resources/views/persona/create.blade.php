@@ -8,8 +8,7 @@
     <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2489/PNG/96/vaccination_icon_150143.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" integrity="sha512-hwwdtOTYkQwW2sedIsbuP1h0mWeJe/hFOfsvNKpRB3CkRxq8EW7QMheec1Sgd8prYxGm1OM9OZcGW7/GUud5Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-   
-
+   <link rel="stylesheet" href="{{asset('./css/style.css')}}">
     <!-- Nuevo -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
@@ -23,40 +22,27 @@
         <!-- Encabezado  -->
     <div class="container">
         
+         
+        
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-between mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="https://cdn-icons-png.flaticon.com/128/9842/9842056.png" alt="logo" width="60px" height="60px">
+                <img src="https://cdn-icons-png.flaticon.com/128/2376/2376100.png" alt="logo" width="60px" height="60px">
+                <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);">Gestión</a></button> 
+               
             </a>
 
-            <!-- Modal -->
-            <button type="button" class="btn btn-success text-end" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Exportar Excel</button>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog modal-dialog-" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-left" id="exampleModalLabel">Exportar Excel</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <input type="text" name="userPassword" class="form-control" id="userPassword" placeholder="Ingrese la contraseña">
-                        <small style="color: red; display: none;" id="errorMessage">Contraseña incorrecta, intenta de nuevo</small>
-                    </div>
-                </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reset()" id="btnCancelar">Cancelar</button>
-                    <a href="{{ route('personas.excel') }}" id="link" onclick="validar()"><button class="btn btn-success">Exportar</button></a>
-                </div>
-                </div>
-            </div>
-            </div>
-        </header>
-    </div>
-        <!-- Formulario -->
+        
+       
+            <!-- Formulario -->
+        
+        
+       
+        <div class="card-body py-4 px-md-5" style="
+        margin-top: 20px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        "> 
         <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="container">
@@ -64,7 +50,7 @@
                 @csrf
                 <div class="mb-3">
                 
-                    <label for="nombre" class="form-label text-secondary" for="validationDefault01">Nombre</label>
+                    <label for="nombre" class="form-label text-secondary" for="validationDefault01" >Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" tabindex="1" autocomplete=off value="{{ old('nombre') }}">
                     <small style="color:red;">{{ $errors->first('nombre') }}</small>
                 </div>
@@ -108,14 +94,18 @@
                     <input type="file" class="form-control text-secondary" id="imagen" name="imagen"  accept="image/*">
                     <small style="color:red;">{{ $errors->first('imagen') }}</small>
                 </div>
-                <a href="create" tabindex="5" class="btn btn-secondary">Cancelar</a>
-                <button tabindex="6" class="btn btn-primary" value="Guardar" id="button"  type="submit">Guardar</button> 
-               
+                <a href="/" tabindex="5" class="btn btn-secondary">Cancelar</a>
+                <button tabindex="6" class="btn btn-primary" type="submit">Guardar</button> 
+                </div>
             </form>
            
-            </div>
+
         </div>
+        </div>
+        </div>
+
     </div>
+
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js" integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
