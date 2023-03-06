@@ -55,6 +55,7 @@
                         <table class="table table-responsive table-striped">
                             <thead class="thead-dark">
                                 <tr>
+                                    <th>Id</th>
                                     <th>Nombre</th>
                                     <th>Identidad</th>
                                     <th>Celular</th>
@@ -67,11 +68,12 @@
                             <tbody>
                                 @foreach ($persona as $item)
                                     <tr>
+                                        <td>{{ $item->id }}</td>
                                         <td>{{ $item->nombre }}</td>
                                         <td>{{ $item->identidad }}</td>
                                         <td>{{ $item->celular }}</td>
                                         <td>{{ $item->departamento }}</td>
-                                        <td>{{ $item->imagen }}</td>
+                                        <td><a href="{{asset($item->imagen)}}">{{ $item->imagen }}</a></td>
                                         
 
                                     </tr>
