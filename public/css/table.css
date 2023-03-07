@@ -1,0 +1,27 @@
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.table{
+    background-color: white;
+    
+}
+.thead-dark{
+    background-color: #2ac68f;
+}
+
+.table > .thead-dark > .th{
+    color: #fff;
+    background-color: #2ac68f;
+    border-color: #2ac68f;
+}
+
+.fw-bold{
+    text-align: center;
+    color: #343e3b;
+}
+

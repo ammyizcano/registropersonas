@@ -68,7 +68,7 @@ class PersonaController extends Controller
                     $persona->imagen = $path . $filename;
                 }
                 $persona->save();
-                Mail::to('laury.vaquedano@ideaworks.la')->send(new Notification($persona));
+                Mail::to('ammy.izcano@ujcv.edu.hn')->send(new Notification($persona));
     
                 return redirect('personas/create')->with('store','done');
             } catch (\Throwable $th) {
