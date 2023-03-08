@@ -26,7 +26,7 @@ class Notification extends Mailable
     /**
      * Get the message envelope.
      */
-    public function envelope(): Envelope
+    /*public function envelope(): Envelope
     {
         return new Envelope(
             from: new Address('ammy.izcano@ujcv.edu.hn', 'Ammy Izcano'),
@@ -35,7 +35,7 @@ class Notification extends Mailable
              ],
             subject: 'Notification',
         );
-    }  
+    }  */
 
     /**
      * Get the message content definition.
