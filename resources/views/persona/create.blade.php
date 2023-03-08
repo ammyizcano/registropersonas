@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<head>
 <title>Formulario de Vacunación</title>
 	<link rel="stylesheet" href="{{asset('./css/form.css')}}"> 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
