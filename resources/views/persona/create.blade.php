@@ -16,7 +16,7 @@
         
 	<div class="container">
     <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
-        backdrop-filter: blur(30px)">Gestión</a></button> 
+        backdrop-filter: blur(30px)">➜ Gestión</a></button> 
     <div class="img">
     
 		        </div>
@@ -93,7 +93,7 @@
                 </div>
                    <div class="">
                    <input type="file" class="select-css" id="imagen" name="imagen"  accept="image/*">
-               
+                   <small style="color:red;">{{ $errors->first('imagen') }}</small>
 					</div>
                    
            		</div>

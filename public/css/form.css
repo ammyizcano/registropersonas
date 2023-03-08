@@ -170,13 +170,13 @@ a:hover{
 h3{
 	border-color: #32be8f;
     display: center;
-	color: #3b3a3a;
+	color: #2a2929;
     margin: 0 0 10px 0;
 	
 }
-h3:hover{
+/* h3:hover{
 	color: #0e100f;
-}
+} */
 
 
 .btn-guardar{
@@ -212,10 +212,11 @@ a:hover{
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
-		text-transform: uppercase;
 	margin: 1rem 0;
 	cursor: pointer;
 	transition: .5s;
+	font-weight: bold;
+	text-transform: capitalize;
 }
 .btn:hover{
 	background-position: right;

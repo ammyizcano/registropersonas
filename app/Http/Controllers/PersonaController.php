@@ -50,7 +50,7 @@ class PersonaController extends Controller
             'identidad' => 'required|numeric|digits:13',
             'celular' => 'required|numeric|digits:8',
             'departamento' => 'not_in:Ninguno',
-            'imagen' => 'required|image'
+            'imagen' => 'required|image'  
         ]);
 
         if($rules)  {
