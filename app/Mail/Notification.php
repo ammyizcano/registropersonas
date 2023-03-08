@@ -26,7 +26,7 @@ class Notification extends Mailable
     /**
      * Get the message envelope.
      */
-    /*public function envelope(): Envelope
+    public function envelope(): Envelope
     {
         return new Envelope(
             from: new Address('ammy.izcano@ujcv.edu.hn', 'Ammy Izcano'),
@@ -35,28 +35,28 @@ class Notification extends Mailable
              ],
             subject: 'Notification',
         );
-    }  */
+    }  
 
     /**
      * Get the message content definition.
      */
-   /* public function content(): Content
+    public function content(): Content
     {
         return new Content(
             view: 'emails.notification',
             text: 'emails.notification-text'
         );
-    } */
+    }
 
     /**
      * Get the attachments for the message.
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
-   /* public function attachments(): array
+    public function attachments(): array
     {
         return [];
-    } */
+    }
 
 
   
