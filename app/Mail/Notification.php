@@ -40,23 +40,23 @@ class Notification extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+   /* public function content(): Content
     {
         return new Content(
             view: 'emails.notification',
             text: 'emails.notification-text'
         );
-    }
+    } */
 
     /**
      * Get the attachments for the message.
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
-    public function attachments(): array
+   /* public function attachments(): array
     {
         return [];
-    }
+    } */
 
 
   
