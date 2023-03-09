@@ -63,7 +63,7 @@ class PersonaController extends Controller
                 $persona->departamento = $request->input('departamento');
                 if ($request->hasfile('imagen')) {
                     $file = $request->file('imagen');
-                    $path = 'app/public/images/';
+                    $path = 'storage/app/public/imagenes/';
                     $filename = $file->getClientOriginalName();
                     $upload = $request->file('imagen')->move($path, $filename);
                     $persona->imagen = $path . $filename;
