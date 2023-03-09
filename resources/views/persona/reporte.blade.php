@@ -16,6 +16,7 @@
                                     <th>Celular</th>
                                     <th>Departamento</th>
                                     <th>Imagen</th>
+                                    <th>Fecha</th>
                                 </tr>
 
 
@@ -29,6 +30,7 @@
                                         <td>{{ $item->celular }}</td>
                                         <td>{{ $item->departamento }}</td>
                                         <td><a href="{{asset($item->imagen)}}">{{ $item->imagen }}</a></td>
+                                        <td>{{ $item->created_at}}</td>
                                         
 
                                     </tr>

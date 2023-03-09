@@ -13,10 +13,7 @@
 
 <body>
     <img class="wave" src="{{URL('css/wave.png')}}">
-     
-       
-          
-        
+                             
 	<div class="container">
     <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px)">➜ Gestión</a></button> 

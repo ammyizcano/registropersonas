@@ -23,7 +23,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $persona = Persona::get();
+        $persona = Persona::paginate(15);
+        
         return view('persona.detalle',['persona'=>$persona]);
     }
 

@@ -341,7 +341,11 @@
 
         <tr>
             <td><b>Imagen</b></td>
-            <td>{{$persona->imagen}}</td>
+            <td><a href="{{asset($persona->imagen)}}">{{ $persona->imagen }}</a></td>
+        </tr>
+        <tr>
+            <td><b>Fecha</b></td>
+            <td>{{$persona->created_at}}</td>
         </tr>
   
     </table>

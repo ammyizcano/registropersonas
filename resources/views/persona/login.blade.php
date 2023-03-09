@@ -41,7 +41,7 @@
             	
             
 				<button type="submit" class="btn btn-primary btn-block mb-4 rounded-4">
-					ingresar
+					Ingresar
 				  </button>
             </form>
         </div>
