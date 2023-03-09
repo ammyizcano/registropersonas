@@ -133,7 +133,7 @@
 @if(session('fail') == "done")
     <script>
        swal({
-  title: '¡Listo!',
+  title: '¡Error!',
   text: 'No eres un Usuario Administrador.',
   timer: 2000,
   showCancelButton: false,
