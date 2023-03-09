@@ -13,7 +13,7 @@
 
 <body>
     <img class="wave" src="{{URL('css/wave.png')}}">
-                             
+                       
 	<div class="container">
     <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px)">➜ Gestión</a></button> 
@@ -114,6 +114,17 @@
     <script>
         swal("¡Listo!", "El registro se guardó correctamente", "success", {
             button: "Ok"
+        });
+    </script>
+@endif
+@if(session('fail') == "done")
+    <script>
+        swal({
+       title: "Error,",
+       text: "No eres un usuario administrador.",
+       icon: "warning",
+       button: "ok",
+
         });
     </script>
 @endif

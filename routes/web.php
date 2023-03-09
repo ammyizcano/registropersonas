@@ -28,7 +28,7 @@ Route::view('/', 'persona.create')->name('persona.index');
     
  // })->name('persona.detalle');
 
- Route::get('/persona.detalle',[PersonaController::class, 'index'])->name('persona.detalle')->middleware('auth');
+ Route::get('/persona.detalle',[PersonaController::class, 'index'])->name('persona.detalle')->middleware('auth.admin');
  Route::post('/validar-login',[LoginController::class, 'login'])->name('ingresar');
 
  Route::view('/login', "persona.login")->name('login');

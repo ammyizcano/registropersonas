@@ -16,10 +16,10 @@ class AdminAuth {
     public function handle(Request $request, Closure $next)
     {
         if(auth()->check()){
-            if(auth()->user()->role_id =='1'){
+            if(auth()->user()->role =='1'){
                  return $next($request);
             }
         }
-        return redirect()->route('persona.create')->with('store','¡Acceso denegado! No eres usuario administrador');
+        return redirect()->route('persona.index')->with('fail','done');
     }
 }
