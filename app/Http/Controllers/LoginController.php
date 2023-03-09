@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         }else{
             
-            return redirect()->route('persona.index')->with('store','Credenciales incorrectas');
+            return redirect()->route('login')->with('fail','done');
 
         }
 

@@ -13,7 +13,7 @@
 
 <body>
     <img class="wave" src="{{URL('css/wave.png')}}">
-                       
+      
 	<div class="container">
     <a href="{{route('login')}}" id="link"><button class="btn btn-success" style=" background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px)">➜ Gestión</a></button> 
@@ -112,20 +112,41 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 @if(session('store') == "done")
     <script>
-        swal("¡Listo!", "El registro se guardó correctamente", "success", {
-            button: "Ok"
-        });
+        swal({
+  
+  title: '¡Listo!',
+  text: 'Tus datos se han guardado correctamente.',
+  timer: 2000,
+  showCancelButton: false,
+  showConfirmButton: false
+}).then(
+  function () {},
+  // handling the promise rejection
+  function (dismiss) {
+    if (dismiss === 'timer') {
+      //console.log('I was closed by the timer')
+    }
+  }
+)
     </script>
 @endif
 @if(session('fail') == "done")
     <script>
-        swal({
-       title: "Error,",
-       text: "No eres un usuario administrador.",
-       icon: "warning",
-       button: "ok",
-
-        });
+       swal({
+  title: '¡Listo!',
+  text: 'No eres un Usuario Administrador.',
+  timer: 2000,
+  showCancelButton: false,
+  showConfirmButton: false
+}).then(
+  function () {},
+  // handling the promise rejection
+  function (dismiss) {
+    if (dismiss === 'timer') {
+      //console.log('I was closed by the timer')
+    }
+  }
+)
     </script>
 @endif
 </body>
